@@ -68,7 +68,7 @@ public class Handler extends AbilityBot {
                 .builder()
                 .name("add")
                 .info("want to start")
-                .input(2)
+                .input(1)
                 .locality(USER)
                 .privacy(ADMIN)
                 .action(ctx -> addAccount(ctx))
@@ -97,7 +97,7 @@ public class Handler extends AbilityBot {
         try {
             DBConnector dbConnector = new DBConnector();
             getCredits();
-            dbConnector.addUser(ctx.firstArg() + " " + ctx.secondArg(), password, Config.NONE);
+            dbConnector.addUser(ctx.firstArg(), password, Config.NONE);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

@@ -8,7 +8,8 @@ class DBConnector {
     private Connection connection;
 
     DBConnector() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
+        //Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         this.connection = DriverManager.getConnection(Config.url, Config.login, Config.password);
     }
     void addUser(String username, String password, String status) throws SQLException {
